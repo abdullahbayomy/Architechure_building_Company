@@ -1,0 +1,353 @@
+@import 'config';
+@import 'utilities';
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// General Styles
+
+body {
+  font-family: 'Roboto Slab', serif;
+  line-height: 1.4;
+  background: #fff;
+  font-size: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: $dark-color;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+h2,
+h3,
+h4 {
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.fa,
+.fas,
+.fab {
+  color: #444;
+}
+
+p {
+  font-size: 0.9rem;
+}
+
+// .left {
+//   border-right: 1px #ccc solid;
+// }
+
+#sub {
+  &-nav1 {
+    background: $dark-color;
+    color: #ccc;
+    font-size: 0.8rem;
+
+    & .container {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 0;
+
+      ul {
+        display: flex;
+
+        span {
+          padding-left: 0.5rem;
+        }
+
+        li {
+          border-right: 1px #ccc solid;
+          padding-right: 0.5rem;
+
+          a {
+            color: #ccc;
+
+            .fa-home {
+              color: $main-color;
+            }
+          }
+        }
+
+        li:nth-child(even) {
+          padding-left: 0.5rem;
+        }
+        li:last-child() {
+          padding-left: 0.5rem;
+          border: none;
+        }
+      }
+    }
+  }
+
+  &-nav2 {
+    background: #fff;
+    color: set-text-color(#fff);
+    & .container {
+      display: flex;
+      justify-content: space-between;
+
+      a {
+        color: #000;
+        h2 {
+          letter-spacing: 0.3rem;
+        }
+      }
+
+      .call-text {
+        display: flex;
+
+        & > div {
+          padding-right: 2rem;
+        }
+      }
+    }
+  }
+
+  &-nav3 {
+    background: $light-color;
+    font-size: 0.9rem;
+    & .container ul {
+      display: flex;
+
+      li {
+        padding: 1rem 2rem 1rem 0;
+      }
+
+      li:hover a {
+        color: $main-color;
+      }
+    }
+  }
+}
+
+#home {
+  &-showcase {
+    background: $bg-image no-repeat center center/cover;
+    background-attachment: fixed;
+    height: 90vh;
+    color: #fff;
+    position: relative;
+
+    & .showcase-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: grid;
+      place-items: center;
+      align-content: center;
+
+      h1 {
+        font-size: 3rem;
+        padding-bottom: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+        margin-bottom: 3rem;
+      }
+    }
+  }
+}
+
+// Sections
+#section {
+  &-a {
+    .content-card {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 1rem;
+
+      h3 {
+        padding: 1rem 0;
+        white-space: nowrap;
+      }
+
+      p {
+        font-size: 0.9rem;
+        padding-bottom: 1.5rem;
+      }
+    }
+  }
+
+  &-b {
+    background: url('../img/attachment.jpg') no-repeat center center/cover;
+    color: #fff;
+    position: relative;
+    height: 70vh;
+    background-attachment: fixed;
+
+    & .section-b-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+
+      h2 {
+        margin-top: 2rem;
+      }
+
+      .section-b-content-grid {
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1rem;
+
+        h4 {
+          padding-bottom: 1rem;
+        }
+
+        p {
+          padding-bottom: 1rem;
+        }
+
+        p:last-child() {
+          padding: 1rem 0 0 0;
+        }
+      }
+    }
+  }
+
+  // Section C:
+  &-c {
+    color: rgb(91, 87, 87);
+    .section-c-content {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 1rem;
+
+      .people1 {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        // text-align: center;
+
+        img {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          margin-right: 2rem;
+        }
+
+        h4 {
+          margin-top: 2rem;
+          line-height: 0.7;
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+
+  // Section D:
+  &-d {
+    position: relative;
+    background: url('../img/grid_items/4.jpg') no-repeat center center/cover;
+    background-attachment: fixed;
+    height: 70vh;
+    color: #fff;
+
+    .shadow {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      padding-top: 5rem;
+    }
+
+    .section-d-content {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 1rem;
+
+      img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+      }
+
+      .grid-img {
+        display: grid;
+        place-items: center;
+        justify-self: center;
+        align-self: center;
+        object-fit: fill;
+
+        h4 {
+          padding-top: 1rem;
+        }
+
+        .links {
+          padding-top: 0.5rem;
+          .fab,
+          .fas {
+            color: #fff;
+            padding-right: 0.5rem;
+            font-size: 0.8rem;
+            transition: all 0.5s ease-in;
+          }
+
+          .fa-twitter:hover {
+            color: #38a1f3;
+          }
+          .fa-linkedin-in:hover {
+            color: #0077b5;
+          }
+          .fa-google-plus-g:hover {
+            color: rgb(224, 85, 85);
+          }
+          .fa-users:hover {
+            color: rgb(103, 193, 131);
+          }
+        }
+
+        .eye {
+          position: relative;
+          border-radius: 50%;
+          display: grid;
+          place-items: center;
+          cursor: pointer;
+          transition: border 0.3s ease-out;
+        }
+
+        .eye .far {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          opacity: 0;
+          transition: opacity 0.3s ease-out;
+        }
+
+        .eye:hover {
+          border: 2.5px $main-color solid;
+        }
+
+        .eye:hover .far {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
